@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i am your Doula | Gerdien van Tongeren, Enkhuizen</title>
+<meta name="description" content="Gerdien van Tongeren, gecertificeerd doula in Enkhuizen en omgeving. Begeleiding bij geboorte, kraamzorg, postpartum, massage en maaltijden. In vertrouwen, rust en zachtheid.">
+<link rel="icon" type="image/png" href="images/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #4f6150;     /* donker salie, voor tekst en koppen */
+    --green-mid: #7c917a;      /* zacht eucalyptus */
+    --green-soft: #dfe6d8;     /* lichte salie vlakken */
+    --green-pale: #eef2e9;     /* heel licht groen */
+    --cream: #faf7f0;          /* warme creme basis */
+    --coral: #f0857d;          /* accent uit het logo */
+    --coral-deep: #e0726a;     /* coral hover */
+    --ink: #3b423a;            /* warme donkergroene tekst */
+    --ink-soft: #5d655a;       /* zachtere bodytekst */
+    --shadow: 0 14px 40px rgba(79, 97, 80, 0.12);
+    --radius: 22px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Mulish', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.75;
+    font-size: 17px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    color: var(--green-deep);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 760px; margin: 0 auto; }
+
+  a { color: var(--coral-deep); }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 247, 240, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(124, 145, 122, 0.18);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 21px; color: var(--coral); font-weight: 600; letter-spacing: 0.01em; text-decoration: none; }
+  .nav-logo span { color: var(--green-deep); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-soft); font-size: 15px; font-weight: 600;
+    letter-spacing: 0.02em; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--coral); }
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; font-size: 26px; color: var(--green-deep); }
+
+  @media (max-width: 820px) {
+    .nav-links {
+      position: absolute; top: 70px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--cream); border-bottom: 1px solid rgba(124,145,122,.18);
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .nav-links.open { max-height: 420px; }
+    .nav-links li { border-top: 1px solid rgba(124,145,122,.12); }
+    .nav-links a { display: block; padding: 16px 28px; }
+    .nav-toggle { display: block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse at 75% 15%, rgba(240,133,125,0.10), transparent 55%),
+      linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 70%);
+    padding: 92px 0 80px;
+    text-align: center;
+  }
+  .hero img.wordmark { max-width: 460px; width: 80%; height: auto; margin: 0 auto 14px; display: block; mix-blend-mode: multiply; }
+  .hero .tagline {
+    font-family: 'Mulish', sans-serif; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: lowercase; color: var(--green-mid); font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .hero h1 { font-size: clamp(30px, 5vw, 50px); font-weight: 400; margin: 0 auto 22px; max-width: 760px; }
+  .hero h1 em { color: var(--coral); font-style: italic; }
+  .hero p.lead { font-size: 19px; color: var(--ink-soft); max-width: 620px; margin: 0 auto 36px; }
+
+  .btn {
+    display: inline-block; background: var(--coral); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+    padding: 15px 34px; border-radius: 100px; transition: background .2s, transform .2s;
+    box-shadow: 0 8px 22px rgba(240,133,125,0.35);
+  }
+  .btn:hover { background: var(--coral-deep); transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--green-deep); box-shadow: none; border: 1.5px solid var(--green-mid); margin-left: 10px; }
+  .btn.ghost:hover { background: var(--green-soft); color: var(--green-deep); transform: translateY(-2px); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 84px 0; }
+  section.tint { background: var(--green-pale); }
+  section.soft { background: var(--green-soft); }
+
+  .eyebrow {
+    font-family: 'Mulish', sans-serif; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--coral); font-size: 12.5px; margin-bottom: 14px;
+  }
+  .section-head { text-align: center; margin-bottom: 54px; }
+  .section-head h2 { font-size: clamp(26px, 4vw, 38px); }
+  .section-head p { color: var(--ink-soft); max-width: 580px; margin: 16px auto 0; }
+
+  p + p { margin-top: 18px; }
+
+  /* ---------- OVER MIJ ---------- */
+  .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+  .about-grid img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); display: block; }
+  .about-grid h2 { font-size: clamp(26px, 4vw, 38px); margin-bottom: 10px; }
+  .motto {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--coral-deep);
+    border-left: 3px solid var(--coral); padding-left: 20px; margin: 26px 0;
+  }
+  .motto small { display: block; font-size: 13px; font-style: normal; color: var(--green-mid); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 8px; font-family: 'Mulish', sans-serif; }
+  .facts { list-style: none; margin-top: 24px; }
+  .facts li { position: relative; padding-left: 30px; margin-bottom: 10px; color: var(--ink-soft); }
+  .facts li::before { content: '✦'; position: absolute; left: 0; top: 0; color: var(--coral); }
+
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ---------- VISIE ---------- */
+  .visie { text-align: center; }
+  .bigquote {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: clamp(22px, 3.4vw, 30px); color: var(--green-deep);
+    line-height: 1.45; margin: 40px auto; max-width: 780px;
+  }
+  .bigquote small { display: block; font-family: 'Mulish', sans-serif; font-style: normal; font-size: 14px; color: var(--coral); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 18px; }
+
+  /* ---------- AANBOD ---------- */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .card {
+    background: var(--cream); border-radius: var(--radius); padding: 36px 34px;
+    box-shadow: var(--shadow); border: 1px solid rgba(124,145,122,0.10);
+  }
+  .card h3 { font-size: 23px; margin-bottom: 6px; }
+  .card .kicker { font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral); font-weight: 700; margin-bottom: 14px; }
+  .card p { color: var(--ink-soft); font-size: 16px; }
+  .card ul { list-style: none; margin-top: 16px; }
+  .card ul li { position: relative; padding-left: 26px; margin-bottom: 9px; font-size: 15.5px; color: var(--ink-soft); }
+  .card ul li::before { content: '✦'; position: absolute; left: 0; top: 1px; color: var(--green-mid); font-size: 13px; }
+  .card.span2 { grid-column: span 2; }
+  @media (max-width: 820px) {
+    .cards { grid-template-columns: 1fr; }
+    .card.span2 { grid-column: span 1; }
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .review {
+    background: var(--cream); border-radius: var(--radius); padding: 34px 32px; box-shadow: var(--shadow);
+  }
+  .stars { color: var(--coral); letter-spacing: 3px; font-size: 16px; margin-bottom: 16px; }
+  .review p { font-size: 16px; color: var(--ink-soft); font-style: italic; }
+  .review .name { display: block; margin-top: 18px; font-style: normal; font-weight: 700; color: var(--green-deep); font-family: 'Fraunces', serif; }
+  @media (max-width: 820px) { .reviews { grid-template-columns: 1fr; } }
+
+  /* ---------- CONTACT ---------- */
+  .contact { text-align: center; }
+  .contact-cards { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin: 40px 0 30px; }
+  .contact-card {
+    background: var(--cream); border-radius: var(--radius); padding: 28px 34px; min-width: 210px;
+    box-shadow: var(--shadow); text-decoration: none; color: var(--ink); transition: transform .2s;
+  }
+  .contact-card:hover { transform: translateY(-3px); }
+  .contact-card .label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral); font-weight: 700; }
+  .contact-card .value { font-family: 'Fraunces', serif; font-size: 20px; color: var(--green-deep); margin-top: 6px; }
+
+  .closing { background: var(--green-soft); }
+  .closing .narrow { text-align: center; }
+  .closing img.figure { width: 70px; height: auto; margin: 0 auto 24px; display: block; mix-blend-mode: multiply; }
+  .closing .sign { font-family: 'Fraunces', serif; font-style: italic; font-size: 24px; color: var(--coral-deep); margin-top: 22px; }
+
+  /* ---------- SFEERBAND ---------- */
+  .imgband {
+    position: relative; min-height: 56vh; padding: 0;
+    background-size: cover; background-position: center 40%;
+  }
+  .imgband::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(59,66,58,0.55), rgba(59,66,58,0.10) 55%, rgba(59,66,58,0.25));
+  }
+  .imgband .band-quote {
+    position: relative; z-index: 2; max-width: 760px; margin: 0 auto;
+    min-height: 56vh; display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 28px 60px; text-align: center; color: #fff;
+  }
+  .imgband .band-quote p {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.4; text-shadow: 0 2px 18px rgba(0,0,0,0.3);
+  }
+
+  /* ---------- FOTOSTRIP ---------- */
+  .photostrip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  .photostrip figure { margin: 0; }
+  .photostrip img {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px;
+    box-shadow: var(--shadow); display: block;
+  }
+  .photostrip figcaption {
+    text-align: center; font-size: 13px; color: var(--green-mid); margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- KAARTFOTO ---------- */
+  .card .cardimg {
+    width: calc(100% + 68px); margin: -36px -34px 24px; height: 280px;
+    object-fit: contain; background: var(--green-pale); display: block;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--green-deep); color: rgba(255,255,255,0.85);
+    text-align: center; padding: 44px 0; font-size: 14px;
+  }
+  footer .ft-name { font-family: 'Fraunces', serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
+  footer a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-logo">i am your <span>Doula</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul class="nav-links" id="menu">
+      <li><a href="#over" onclick="closeMenu()">Over Gerdien</a></li>
+      <li><a href="#visie" onclick="closeMenu()">Visie</a></li>
+      <li><a href="#aanbod" onclick="closeMenu()">Aanbod</a></li>
+      <li><a href="#ervaringen" onclick="closeMenu()">Ervaringen</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <img class="wordmark" src="images/logo-volledig.jpg" alt="i am your Doula logo">
+    <p class="tagline">doula &nbsp;•&nbsp; kraamzorg &nbsp;•&nbsp; postpartum &nbsp;•&nbsp; massage &nbsp;•&nbsp; maaltijden</p>
+    <h1>In deze bijzondere periode mag jij je <em>gedragen</em> voelen</h1>
+    <p class="lead">In vertrouwen, rust en zachtheid. Ik loop graag een stukje met jullie mee, afgestemd op wat jij en je gezin nodig hebben.</p>
+    <a href="#contact" class="btn">Laten we kennismaken</a>
+    <a href="#aanbod" class="btn ghost">Bekijk het aanbod</a>
+  </div>
+</section>
+
+<!-- WELKOM -->
+<section>
+  <div class="wrap narrow" style="text-align:center;">
+    <p class="eyebrow">Welkom</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px); margin-bottom:24px;">Fijn dat je er bent</h2>
+    <p>Dank je wel voor onze fijne kennismaking. Omdat het prettig kan zijn om alles nog eens rustig terug te lezen, heb ik deze plek voor je gemaakt. Geschreven aan jou als (aanstaande) moeder. Partner, voel je net zo welkom.</p>
+    <p>In deze bijzondere periode gebeurt er veel. Mijn wens is dat jij je gedragen voelt: in vertrouwen, rust en zachtheid.</p>
+  </div>
+</section>
+
+<!-- SFEERBAND -->
+<section class="imgband" style="background-image:url('images/g_1.jpeg');">
+  <div class="band-quote">
+    <p>Vertrouwen op het onbekende, meebewegen met wat er is, en zien wat er écht toe doet.</p>
+  </div>
+</section>
+
+<!-- OVER MIJ -->
+<section class="tint" id="over">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="images/gerdien-1.jpg" alt="Gerdien van Tongeren">
+      <div>
+        <p class="eyebrow">Over mij</p>
+        <h2>Ik ben Gerdien</h2>
+        <p>Gecertificeerd doula, moeder van drie, avonturier en een echte duizendpoot. Ik ben 42 en woon in Enkhuizen met mijn man Meindert en onze kinderen van 15, 13 en 9.</p>
+        <p class="motto">What if I fall, but darling, what if you fly?<small>mijn levensmotto</small></p>
+        <p>In 2019 gooiden we het roer om. We gaven onze baan op, verhuurden ons huis en vertrokken met drie kinderen naar Afrika. Vijf jaar lang in een Land Rover Defender, dwars door het zuidoosten van dit prachtige continent. Die reis heeft me geleerd om te vertrouwen op het onbekende, mee te bewegen met wat er is, en te zien wat er écht toe doet. Wanneer plan A niet werkt, weet ik dat het alfabet nog veel meer letters heeft.</p>
+        <p>Naast mijn werk als doula ben ik Secret Sunrise facilitator, babs (officiante) en cultuurcoördinator voor Stichting MADhouse in Enkhuizen, zodat ieder kind in aanraking komt met music, arts &amp; drama.</p>
+        <ul class="facts">
+          <li>Ik geloof dat nieuwsgierigheid en durf de sleutel zijn tot een rijk leven.</li>
+          <li>Ik houd van koudwaterzwemmen, dansen, glitters en een horizon zonder bebouwing.</li>
+          <li>Humor, openheid en vertrouwen zijn voor mij onmisbaar, in het leven én in mijn werk.</li>
+          <li>Ik gun iedereen een doula. Echt.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="photostrip">
+      <figure>
+        <img src="images/g2.jpeg" alt="Gerdien op de bakfiets vol veldbloemen">
+        <figcaption>levensvreugde</figcaption>
+      </figure>
+      <figure>
+        <img src="images/g10.jpeg" alt="Gerdien zingend met glitters, Secret Sunrise">
+        <figcaption>dansen en glitters</figcaption>
+      </figure>
+      <figure>
+        <img src="images/g4.jpeg" alt="Gerdien wandelend in de natuur met rugzak">
+        <figcaption>buiten en op avontuur</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- VISIE -->
+<section id="visie">
+  <div class="wrap narrow visie">
+    <p class="eyebrow">Mijn visie</p>
+    <h2 style="font-size:clamp(26px,4vw,38px);">Geboorte is meer dan een medisch moment</h2>
+    <p style="margin-top:22px;">Het is een overgang. Een ervaring die doorwerkt in je lichaam, je gevoel en je vertrouwen, iets dat je je hele leven meeneemt. En daarna begint een minstens zo belangrijke fase: de eerste 40 dagen. Rust, zachtheid en ondersteuning zijn hierin geen luxe, maar essentieel. Je hoeft het niet alleen te doen.</p>
+    <p class="bigquote">Het moment dat een kind geboren wordt, is ook het moment dat een moeder geboren wordt, en die overgang verdient net zoveel zorg en aandacht.<small>Gerdien van Tongeren</small></p>
+    <p>Ik geloof dat jij weet wat je nodig hebt. Soms moet je alleen geholpen worden om die stem te horen. Mijn rol is om die ruimte te creëren: zonder oordeel, met volledige aandacht voor jou.</p>
+  </div>
+</section>
+
+<!-- AANBOD -->
+<section class="tint" id="aanbod">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Wat ik voor jou kan betekenen</p>
+      <h2>Het aanbod</h2>
+      <p>Alles is afgestemd op wat jij en je gezin nodig hebben. Voel je vrij om te kiezen wat bij jullie past.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img class="cardimg" src="images/g7.jpeg" alt="Gerdien bij een geboorte in het ziekenhuis">
+        <p class="kicker">Geboorte doula</p>
+        <h3>Een stuk samen oplopen</h3>
+        <p>Soms voelt de aanstaande geboorte spannend, of verlang je naar meer persoonlijke begeleiding naast de reguliere zorg. Als doula loop ik een stuk met jullie mee, afgestemd op wat jullie nodig hebben.</p>
+        <ul>
+          <li>Een intake rond week 24 tot 28 bij jullie thuis</li>
+          <li>Twee verdiepende sessies ter voorbereiding op de geboorte</li>
+          <li>Samen vormgeven van jullie geboortewensen en kraamplan</li>
+          <li>Continue bereikbaarheid voor vragen tijdens de zwangerschap</li>
+          <li>Vanaf week 38 stand-by, 24/7 oproepbaar</li>
+          <li>Aanwezigheid bij de geboorte, vanaf het moment dat jullie dat wensen</li>
+          <li>Ondersteuning voor jou én je partner</li>
+          <li>Een persoonlijke tijdlijn en sfeervolle foto's van de geboorte</li>
+          <li>Ik werk altijd met vaste back-ups</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/g8.jpeg" alt="Gerdien met een pasgeboren baby op schoot">
+        <p class="kicker">Kraamzorg</p>
+        <h3>Een liefdevolle, rustige start</h3>
+        <p>De eerste 40 dagen na de geboorte zijn waardevol maar ook kwetsbaar. Met aandacht voor jou als gezin zorg ik voor een liefdevolle en rustige start.</p>
+        <ul>
+          <li>Je hebt wettelijk recht op minimaal 24 en maximaal 80 uur kraamzorg</li>
+          <li>Samen bepalen we hoeveel uur het beste bij jullie past</li>
+          <li>Bij een eerste kindje raad ik minimaal 49 uur aan</li>
+          <li>Tussen week 30 en 32 kom ik langs voor een intake</li>
+          <li>Kraamzorg wordt vanuit de basisverzekering betaald. Check bij je verzekeraar of je aanvullend verzekerd bent.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="kicker">Postpartum zorg</p>
+        <h3>De eerste 40 dagen</h3>
+        <p>Na de kraamweek neemt de aandacht van buitenaf vaak snel af, terwijl jouw herstel nog volop gaande is. Juist dan kan extra ondersteuning van grote waarde zijn.</p>
+        <ul>
+          <li>Emotionele ondersteuning en ruimte om je verhaal te delen</li>
+          <li>Praktische hulp in huis</li>
+          <li>Ondersteuning bij rust en herstel</li>
+          <li>Aandacht voor voeding, verzorging en hechting</li>
+          <li>Tijd en ruimte om te landen in het moederschap</li>
+        </ul>
+        <p style="margin-top:16px;">Minimaal 12 uur. Geen vast programma, afgestemd op jouw situatie en behoeften.</p>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/g5.png" alt="Massage van een zwangere buik met terracotta doek">
+        <p class="kicker">Massage</p>
+        <h3>Terugkomen in je nieuwe lijf</h3>
+        <p>In de kraamweek streef ik naar drie korte massagemomenten: voeten en onderbenen (dag 3), schouders en nek (dag 5), rug, armen en buik (dag 8). Zo mag jij zachtjes terugkomen in je eigen, nieuwe lijf. Ik gebruik olie met roos, sesam of amandel, afgestemd op het moment.</p>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/g9.jpeg" alt="Buiten koken bij het vuur">
+        <p class="kicker">Postpartum maaltijden</p>
+        <h3>Warme zorg op je bord</h3>
+        <p>Goed eten is een van de mooiste vormen van zorg voor jezelf in de kraamtijd. Voedzame, warme maaltijden, liefdevol bereid en afgestemd op wat jouw lichaam nodig heeft om te herstellen.</p>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/g6.jpeg" alt="Sfeervolle yurt waar de cursus plaatsvindt">
+        <p class="kicker">Privé geboortecursus</p>
+        <h3>Helemaal afgestemd op jou</h3>
+        <p>Een privé geboortecursus die niet standaard is. Na een inventarisatie van jouw wensen hebben we twee dagdelen de tijd om alles door te nemen: geboortefases, houdingen, ademhaling, hechting, massage, pijnstilling en kraamtijd. Helemaal afgestemd op jou. Ik kom bij je thuis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="ervaringen">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Wat anderen zeggen</p>
+      <h2>Ervaringen</h2>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>Gerdien bij ons hebben tijdens de bevalling was precies wat we nodig hadden. Zo'n mooi mens, van binnen en van buiten. Ze bracht zo'n kalme, zachte energie die me de hele tijd een veilig en gesteund gevoel gaf. Ze hielp mijn man zich zelfverzekerd en echt aanwezig te voelen, wat enorm veel voor ons beiden betekende. Ze werkte zo natuurlijk samen met de verloskundige en voelde zich geen moment opdringerig, gewoon een stabiele, geruststellende aanwezigheid. Dankjewel lieverd.</p>
+        <span class="name">Annelies</span>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>Vanaf het begin van mijn zwangerschap tot na de bevalling is Gerdien een enorme steun geweest. Ze denkt echt met je mee in wat jij nodig hebt en doet dit zonder oordeel. Ze voelt feilloos aan wanneer ze aanwezig moet zijn en wanneer ze op de achtergrond mag blijven. Tijdens de bevalling in het ziekenhuis was ze een vertrouwd gezicht: rustig, betrokken en precies goed aanwezig. Ze gaf me het vertrouwen om mijn eigen proces te volgen en hielp me om me veilig en krachtig te voelen. Ze kookt heerlijke voedzame gerechten en geeft ontspannende massages. Gerdien is een warme, kundige en intuïtieve doula die met haar aanwezigheid echt het verschil maakt.</p>
+        <span class="name">Lisa</span>
+      </div>
+    </div>
+    <p class="bigquote" style="text-align:center; margin-top:50px;">Ik gun iedereen een doula, want je hoeft het niet alleen te doen.<small>Gerdien van Tongeren</small></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="soft contact" id="contact">
+  <div class="wrap narrow">
+    <p class="eyebrow">Laten we kennismaken</p>
+    <h2 style="font-size:clamp(26px,4vw,38px);">Ik vind het fijn om contact te hebben</h2>
+    <p style="margin-top:20px;">Je kunt mij bijna 24/7 bereiken via telefoon of Signal: voor laagdrempelig contact, een extra afspraak of om mij op de hoogte te houden van de start van de bevalling.</p>
+    <div class="contact-cards">
+      <a class="contact-card" href="tel:0614468576">
+        <div class="label">Telefoon</div>
+        <div class="value">06 14468576</div>
+      </a>
+      <a class="contact-card" href="https://instagram.com/iam_yourdoula" target="_blank" rel="noopener">
+        <div class="label">Instagram</div>
+        <div class="value">@iam_yourdoula</div>
+      </a>
+      <div class="contact-card">
+        <div class="label">Werkgebied</div>
+        <div class="value">Enkhuizen e.o.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap narrow">
+    <img class="figure" src="images/figuur.jpg" alt="">
+    <p>Deze periode in je leven is bijzonder en intens tegelijk. Het is mijn wens dat jij hier met vertrouwen op terugkijkt. Dat je je gedragen hebt gevoeld. Gesteund. Gezien. Ik loop graag een stukje met jullie mee.</p>
+    <p class="sign">Liefs, Gerdien</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-name">i am your Doula</div>
+    <p>Gerdien van Tongeren &nbsp;•&nbsp; Enkhuizen en omgeving</p>
+    <p style="margin-top:6px;"><a href="tel:0614468576">06 14468576</a> &nbsp;•&nbsp; <a href="https://instagram.com/iam_yourdoula" target="_blank" rel="noopener">@iam_yourdoula</a></p>
+  </div>
+</footer>
+
+<script>
+  function closeMenu(){ document.getElementById('menu').classList.remove('open'); }
+</script>
+</body>
+</html>

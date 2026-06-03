@@ -1,0 +1,15 @@
+# Niet publiceren: persoonlijk document en zware originele bronbestanden
+*.docx
+2025-01-*.jpg
+20250329_*.jpg
+Logo.png
+2025-01-02*.png
+doula_website_mockup_mineraal.html
+.claude/
+.DS_Store
+
+# Ongebruikte / gevoelige foto's niet publiceren
+images/g3.jpeg
+images/g11.jpeg
+images/gerdien-2.jpg
+images/logo-tekst.jpg
