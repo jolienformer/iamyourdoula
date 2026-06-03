@@ -487,6 +487,12 @@
 </footer>
 
 <script>
+  // Laat de browser geen oude scrollpositie herstellen bij herladen
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  // Zonder anker in de URL altijd bovenaan beginnen
+  window.addEventListener('load', function () {
+    if (!location.hash) { window.scrollTo(0, 0); }
+  });
   function closeMenu(){ document.getElementById('menu').classList.remove('open'); }
 </script>
 </body>
