@@ -13,3 +13,13 @@ images/g3.jpeg
 images/g11.jpeg
 images/gerdien-2.jpg
 images/logo-tekst.jpg
+
+# Zware originele foto's van Gerdien (UUID-namen, datum-namen, IMG-namen)
+# De web-klare versies (kaart-*, gerdien-*, sfeer-*) worden wél gepubliceerd
+images/*-????-????-????-????????????.JPG
+images/2024-*.jpg
+images/2024-*.webp
+images/2025-04-*.jpg
+images/2025-07-*.jpg
+images/IMG_*.JPG
+images/IMG_*.MOV
