@@ -249,6 +249,55 @@
     padding: 8px 16px; border-radius: 100px;
   }
 
+  /* ---------- CONTACT FORM ---------- */
+  .contact-form {
+    margin-top: 44px;
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 40px 44px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .contact-form h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(124,145,122,0.30);
+    border-radius: 12px;
+    background: var(--green-pale);
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    transition: border-color .2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--coral); }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .contact-form .btn { display: block; width: 100%; text-align: center; margin-top: 8px; }
+  .form-success {
+    display: none; text-align: center; padding: 18px;
+    color: var(--green-deep); font-weight: 600;
+  }
+
   /* ---------- FOOTER ---------- */
   footer {
     background: var(--green-deep); color: rgba(255,255,255,0.85);
@@ -472,6 +521,10 @@
         <div class="label">Telefoon</div>
         <div class="value">06 14468576</div>
       </a>
+      <a class="contact-card" href="mailto:gerdienvantongeren@gmail.com">
+        <div class="label">E-mail</div>
+        <div class="value">Stuur een mail</div>
+      </a>
       <a class="contact-card" href="https://instagram.com/iam_yourdoula" target="_blank" rel="noopener">
         <div class="label">Instagram</div>
         <div class="value">@iam_yourdoula</div>
@@ -485,6 +538,25 @@
         <div class="value">Enkhuizen e.o.</div>
       </div>
     </div>
+
+    <form class="contact-form" action="https://formspree.io/f/gerdienvantongeren@gmail.com" method="POST" id="contactForm">
+      <h3>Stuur een berichtje</h3>
+      <div class="form-group">
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" placeholder="Jouw naam" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mailadres</label>
+        <input type="email" id="email" name="email" placeholder="jouw@email.nl" required>
+      </div>
+      <div class="form-group">
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" placeholder="Waar kan ik je mee helpen?" required></textarea>
+      </div>
+      <button type="submit" class="btn">Verstuur bericht</button>
+      <p class="form-success" id="formSuccess">Bedankt voor je bericht! Gerdien neemt zo snel mogelijk contact met je op.</p>
+    </form>
+
   </div>
 </section>
 
@@ -516,6 +588,21 @@
     if (!location.hash) { window.scrollTo(0, 0); }
   });
   function closeMenu(){ document.getElementById('menu').classList.remove('open'); }
+
+  // Contactformulier via Formspree (AJAX)
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.reset();
+        form.querySelector('.btn').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }
+    });
+  }
 </script>
 </body>
 </html>
