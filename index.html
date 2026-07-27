@@ -151,6 +151,24 @@
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
   }
 
+  /* ---------- SCHOLING ---------- */
+  .timeline { list-style: none; margin-top: 36px; }
+  .timeline li {
+    display: flex; align-items: baseline; gap: 20px;
+    padding: 14px 0; border-top: 1px solid rgba(124, 145, 122, 0.18);
+  }
+  .timeline li:last-child { border-bottom: 1px solid rgba(124, 145, 122, 0.18); }
+  .timeline .year {
+    flex: 0 0 auto; min-width: 100px;
+    font-family: 'Mulish', sans-serif; font-weight: 700; letter-spacing: 0.04em;
+    color: var(--coral-deep); font-size: 14.5px;
+  }
+  .timeline .opleiding { color: var(--ink-soft); }
+  @media (max-width: 560px) {
+    .timeline li { flex-direction: column; gap: 4px; }
+    .timeline .year { min-width: auto; }
+  }
+
   /* ---------- VISIE ---------- */
   .visie { text-align: center; }
   .bigquote {
@@ -395,6 +413,25 @@
   </div>
 </section>
 
+<!-- SCHOLING -->
+<section id="scholing">
+  <div class="wrap narrow" style="text-align:center;">
+    <p class="eyebrow">Ik blijf leren</p>
+    <h2 style="font-size:clamp(26px,4vw,38px);">Blijven ontwikkelen</h2>
+    <p style="margin-top:16px;">Zorg verandert, inzichten groeien, en ik wil daarin blijven ontwikkelen. Dit is waar ik de afgelopen jaren in heb geïnvesteerd.</p>
+    <ul class="timeline" style="text-align:left;">
+      <li><span class="year">2024</span><span class="opleiding">Geboorte doula, Bia Doula Training</span></li>
+      <li><span class="year">2025</span><span class="opleiding">Zwangerschapsmassage, Bia Doula Training</span></li>
+      <li><span class="year">2025</span><span class="opleiding">Bijscholing Borstvoeding, baby's en doula's, Teddy Roorda</span></li>
+      <li><span class="year">2025</span><span class="opleiding">Foundation Workshop, Spinning Babies</span></li>
+      <li><span class="year">2026</span><span class="opleiding">Postpartummassage, Bia Doula Training</span></li>
+      <li><span class="year">2026</span><span class="opleiding">Postpartum doula, Postnatal Support Network i.s.m. Holos Academie</span></li>
+      <li><span class="year">2026</span><span class="opleiding">E-learning Borstvoeding Kickstart Kraamzorg, Teddy Roorda</span></li>
+      <li><span class="year">2026 tot 2027</span><span class="opleiding">Kraamzorgopleiding, ROC Amsterdam i.s.m. In Liefde Geboren</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- VISIE -->
 <section id="visie">
   <div class="wrap narrow visie">
@@ -462,9 +499,14 @@
       <div class="card">
         <img class="cardimg" src="images/kaart-massage.jpg" alt="Gerdien masseert een zwangere buik in haar praktijkruimte">
         <p class="kicker">Massage</p>
-        <h3>Terugkomen in je lichaam</h3>
+        <h3>Aandacht voor je lichaam</h3>
         <p>Zwangerschap en geboorte veranderen je, van binnen en van buiten. In de drukte van het zorgen voor een baby wordt het eigen lichaam vaak vergeten, terwijl juist daar zoveel aandacht en herstel nodig is.</p>
-        <p>Met zwangerschaps- en postpartum massages nodig ik je uit om te vertragen en weer thuis te komen in je lichaam. Een moment van rust, ontspanning en verzorging, waarin jij volledig centraal staat. Zodat je je gedragen voelt tijdens deze bijzondere overgang naar het moederschap.</p>
+        <p>Met zwangerschaps- en postpartum massages nodig ik je uit om te vertragen en weer thuis te komen in je lichaam. Een moment van rust, ontspanning en verzorging, waarin jij volledig centraal staat.</p>
+        <ul>
+          <li>Zwangerschapsmassage: verlicht spanning in rug, heupen en benen, en helpt je ontspannen richting de bevalling</li>
+          <li>Postpartummassage: ondersteunt herstel na de geboorte, brengt rust in het zenuwstelsel en helpt je weer landen in je lichaam</li>
+          <li>Ontspanningsmassage: voor wie simpelweg een moment van rust en verzorging nodig heeft</li>
+        </ul>
         <p class="prijs">€ 85 in de praktijk &nbsp;•&nbsp; € 100 aan huis</p>
       </div>
       <div class="card">
@@ -483,6 +525,38 @@
         <p>Een privé geboortecursus die niet standaard is. Tijdens een persoonlijke sessie van twee uur nemen we de tijd om stil te staan bij wat voor jullie belangrijk is. We bespreken onder andere de verschillende fases van de geboorte, ademhaling, houdingen, comfortmaatregelen, massage, pijnstilling, de rol van je partner en de eerste periode na de geboorte.</p>
         <p>De inhoud wordt volledig afgestemd op jullie wensen, vragen en behoeften, zodat jullie goed voorbereid en met vertrouwen uitkijken naar de geboorte. De cursus vindt plaats bij jullie thuis, in een vertrouwde en ontspannen omgeving.</p>
         <p class="prijs">€ 125</p>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/kaart-yoga.jpg" alt="Groep zwangere vrouwen in ontspanning tijdens de zwangerschapsyoga les">
+        <p class="kicker">Zwangerschapsyoga &amp; Geboortevoorbereiding</p>
+        <h3>Samen op adem komen</h3>
+        <p>Acht weken lang bij elkaar komen om je voor te bereiden op de geboorte met yoga, ademhaling en heel veel kennis. Deze cursus geef ik samen met yogadocent Arenda van Elements Yoga, en met verloskundigen Ellen en Petra van verloskundigenpraktijk Enkhuizen-Andijk. Met deze cursus krijg je lichaamswerk, ademhaling en medische kennis in één programma. Elke donderdagavond in Enkhuizen.</p>
+        <ul>
+          <li>Acht uitgebreide lessen van 90 minuten: yoga, ademhaling, meditatie en ontspanning</li>
+          <li>Speciale partnerles, inclusief ondersteunende technieken voor je partner</li>
+          <li>Een vertrouwde groep vrouwen om op terug te vallen en ervaringen mee te delen</li>
+          <li>Terugkombijeenkomst met jullie baby's</li>
+          <li>Klankschalensessie voor diepe ontspanning en verbinding met je baby</li>
+          <li>Online materialen en tools om thuis verder te oefenen</li>
+        </ul>
+        <p style="margin-top:16px;">Geschikt vanaf 15 tot 30 weken zwangerschap. Later instromen kan ook.</p>
+        <p class="prijs">€ 254</p>
+        <p style="margin-top:14px;"><a href="https://www.elementsyoga.nl/zwangerschapsyoga" target="_blank" rel="noopener">Meer info en aanmelden via Elements Yoga</a></p>
+      </div>
+      <div class="card">
+        <img class="cardimg" src="images/kaart-bevalbad.jpg" alt="Pasgeboren baby net na een waterbevalling">
+        <p class="kicker">Bevalbad</p>
+        <h3>Bevallen in bad</h3>
+        <p>Water kan tijdens de bevalling een enorme steun zijn: het ondersteunt je gewicht, geeft ontspanning tussen de weeën door en helpt je makkelijker bewegen en loslaten. Ik verhuur mijn eigen bevalbad, geschikt voor twee personen, van Birthpools, zodat je in alle rust kunt bevallen in je eigen vertrouwde omgeving.</p>
+        <ul>
+          <li>Bevalbad, geleverd en weer opgehaald bij jullie thuis</li>
+          <li>Huurperiode van week 37 tot en met week 42</li>
+          <li>Waarborgsom van € 50, retour bij het onbeschadigd terugkomen van het bad</li>
+          <li>Je bestelt zelf je eigen bevalpakket (hygiënische hoes, slang, dompelpomp) bij Birthpools, vanaf € 83</li>
+          <li>Overleg altijd met je verloskundige of een waterbevalling passend is voor jou</li>
+        </ul>
+        <p class="prijs">€ 55 huur bad (excl. bevalpakket, zelf te bestellen)</p>
+        <p style="margin-top:14px;"><a href="https://www.birthpools.com/nl/pages/water-birth-kits-for-birth-pool-in-a-box-regular" target="_blank" rel="noopener">Bevalpakket bestellen bij Birthpools</a></p>
       </div>
     </div>
   </div>
